@@ -23,7 +23,7 @@ defmodule Today.MixProject do
       ],
       dialyzer: [
         plt_add_apps: [:ex_unit],
-        plt_add_deps: :transitive,
+        plt_add_deps: :app_tree,
         plt_file: {:no_warn, "priv/plts/dialyzer.plt"}
       ]
     ]
