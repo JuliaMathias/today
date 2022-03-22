@@ -18,6 +18,7 @@ defmodule TodayWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/twitter", PageController, :twitter
   end
 
   # Other scopes may use custom stacks.
