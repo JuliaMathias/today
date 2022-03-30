@@ -1,4 +1,7 @@
 defmodule Today.SocialMediaAccounts.TwitterAccount do
+  @moduledoc """
+  A Twitter account.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
