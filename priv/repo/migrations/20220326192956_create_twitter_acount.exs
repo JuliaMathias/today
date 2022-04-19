@@ -5,14 +5,15 @@ defmodule Today.Repo.Migrations.CreateTwitterAccount do
   use Ecto.Migration
 
   def change do
-    create table(:twitter_account, primary_key: false) do
+    create table(:twitter_accounts, primary_key: false) do
       add :id, :uuid, primary_key: true
       add :handle, :string
       add :account_created_at, :naive_datetime
+      add :twitter_id, :string
 
       timestamps()
     end
 
-    create unique_index(:twitter_account, [:handle])
+    create unique_index(:twitter_accounts, [:handle])
   end
 end

@@ -10,6 +10,7 @@ defmodule Today.SocialMediaAccounts.TwitterAccount do
   schema "twitter_account" do
     field :account_created_at, :naive_datetime
     field :handle, :string
+    field :twitter_id, :string
 
     timestamps()
   end
@@ -17,7 +18,7 @@ defmodule Today.SocialMediaAccounts.TwitterAccount do
   @doc false
   def changeset(twitter_account, attrs) do
     twitter_account
-    |> cast(attrs, [:handle, :account_created_at])
+    |> cast(attrs, [:handle, :account_created_at, :twitter_id])
     |> validate_required([:handle])
     |> unique_constraint(:handle)
   end
