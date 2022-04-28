@@ -47,6 +47,15 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :tesla, adapter: {Tesla.Adapter.Hackney, [recv_timeout: 30_000]}
+
+config :today,
+  access_token: System.get_env("TWITTER_ACCESS_TOKEN"),
+  bearer_token: System.get_env("TWITTER_BEARER_TOKEN"),
+  consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
+  consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET"),
+  token_secret: System.get_env("TWITTER_TOKEN_SECRET")
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
