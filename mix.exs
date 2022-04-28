@@ -68,7 +68,8 @@ defmodule Today.MixProject do
       {:dialyxir, "~> 1.1", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:tesla, "~> 1.4"},
-      {:hackney, "~> 1.17"}
+      {:hackney, "~> 1.17"},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 
