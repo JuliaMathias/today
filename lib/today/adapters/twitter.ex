@@ -34,7 +34,7 @@ defmodule Today.Adapters.Twitter do
     middleware = [
       {Tesla.Middleware.BaseUrl, "https://api.twitter.com/2/"},
       Tesla.Middleware.JSON,
-      {Tesla.Middleware.Headers, [{"authorization", fetch_env!(:today, :bearer_token)}]}
+      {Tesla.Middleware.BearerAuth, token: fetch_env!(:today, :bearer_token)}
     ]
 
     Tesla.client(middleware, fetch_env!(:tesla, :adapter))
